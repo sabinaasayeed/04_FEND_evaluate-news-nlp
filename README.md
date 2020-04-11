@@ -21,10 +21,10 @@ This is a Front End Udacity Project that has the following requirement:
 - Using APIs and creating requests to external urls
 
 
-### To view project
+# To view project
 The project is published on GitHub Pages. To view, click on this link: [link to project](https://github.com/sabinaasayeed/04_FEND_evaluate-news-nlp)
 
-### How to run 
+# How to run 
 To launch this website, simply clone the repo 
  - cd into your new folder 
  - To install dependency:
