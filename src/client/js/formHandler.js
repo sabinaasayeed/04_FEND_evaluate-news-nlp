@@ -2,10 +2,10 @@ function handleSubmit(event) {
     event.preventDefault()
 
     // check what text was put into the form field
-    let formText = document.getElementById('name').value
-    if (Client.checkForName(formText)) {
+    let formUrl = document.getElementById('name').value
+    if (Client.checkForName(formUrl)) {
         console.log("::: Form Submitted :::")
-        let data = { text: formText };
+        let data = { url: formUrl };
         fetch("/test", {
                 method: 'POST',
                 mode: 'cors',
@@ -20,7 +20,7 @@ function handleSubmit(event) {
             .then(function(res) {
                 console.log("::: response :::", res)
                 document.getElementById('results').innerHTML =
-                    `<h2>Results for : ${res.text}</h2>
+                    `<h2>Results for : ${formUrl}</h2>
                     <ul style="list-style-type:square;">
                     <li>Polarity:    <var>${res.polarity}</var> </li>
                     <li>Subjectivity:    <var>${res.subjectivity}</var> </li>
