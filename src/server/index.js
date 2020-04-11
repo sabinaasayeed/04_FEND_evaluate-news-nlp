@@ -45,7 +45,7 @@ app.post('/test', function(req, res) {
     console.log(req.body.text);
 
     textapi.sentiment({
-        'text': req.body.text
+        url: req.body.url
     }, function(error, response) {
 
         if (error) {
