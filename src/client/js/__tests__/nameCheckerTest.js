@@ -2,19 +2,32 @@ import { checkForName } from "../nameChecker";
 
 describe("Input Name Check Warning", () => {
 
-    test("it returns warning for valid names", () => {
+    test("it checks for valid url", () => {
         global.alert = jest.fn();
 
-        const validNames = [
-            "Picard",
-            "Janeway",
-            "Kirk",
-            "Archer",
-            "Georgiou"
+        const validUrls = [
+            "http://www.google-com.123.com",
+            "https://www.google.com",
+            "https://www.yahoo.com"
         ];
 
-        validNames.forEach(name => {
-            expect(checkForName(name)).toBe(global.alert("Welcome, Captain!"));
+        validUrls.forEach(url => {
+            expect(checkForName(url)).toBe(true);
+
+        });
+    });
+
+    test("it checks for invalid url", () => {
+        global.alert = jest.fn();
+
+        const invalidUrls = [
+            "http://www.google-com.123",
+            "https#//www.google.com",
+            "abc://www.yahoo.com"
+        ];
+
+        invalidUrls.forEach(url => {
+            expect(checkForName(url)).toBe(false);
 
         });
     });
